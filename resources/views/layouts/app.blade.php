@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ja">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,6 +10,7 @@
 
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
+
 <body class="d-flex flex-column min-vh-100 bg-light">
     <div id="app" class="d-flex flex-column flex-grow-1">
         {{-- ヘッダー（※色を変えたいときは下の #2c3e50 を好きなカラーコードに変えてOKです！） --}}
@@ -18,7 +20,9 @@
                     在庫管理システム
                 </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="メニュー切替">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="メニュー切替">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -27,7 +31,7 @@
                     @auth
                         <ul class="navbar-nav me-auto ms-3">
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="#">商品</a>
+                                <a class="nav-link text-white" href="{{ route('items.index') }}">商品</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="#">入出庫履歴</a>
@@ -99,4 +103,5 @@
         </footer>
     </div>
 </body>
+
 </html>
