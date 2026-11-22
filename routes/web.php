@@ -16,4 +16,5 @@ Route::middleware(['auth'])->group(function () {
     })->name('home');
 
     Route::resource('categories', CategoryController::class)->except(['show']);
+    Route::resource('suppliers', \App\Http\Controllers\SupplierController::class)->except(['show']);
 });
