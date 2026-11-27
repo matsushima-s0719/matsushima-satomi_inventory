@@ -18,7 +18,7 @@ class ItemController extends Controller
             $keyword = $request->input('keyword');
             $query->where(function ($q) use ($keyword) {
                 $q->where('name', 'like', "%{$keyword}%")
-                  ->orWhere('jan_code', 'like', "%{$keyword}%");
+                  ->orWhere('item_code', 'like', "%{$keyword}%");
             });
         }
 
@@ -31,7 +31,7 @@ class ItemController extends Controller
         }
 
         if ($request->boolean('low_stock')) {
-            $query->whereColumn('stock_quantity', '<=', 'reorder_point');
+            $query->whereColumn('stock', '<=', 'reorder_point');
         }
 
         $items = $query->orderBy('id')->paginate(10)->withQueryString();
